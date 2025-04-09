@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>RUTINA UPPER-LOWER 4D (Con Técnica Zig Zag)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 11px;
+        }
+        /* Encabezado temático */
+        .header {
+            background: linear-gradient(135deg, #1c1c1c, #f0c674);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .days-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .day-container {
+            background-color: white;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            /* Borde lateral en dorado */
+            border-left: 3px solid #f0c674;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #f0c674;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #1c1c1c;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        .exercise {
+            margin-bottom: 4px;
+            padding-bottom: 4px;
+            border-bottom: 1px dotted #ccc;
+        }
+
+            .exercise:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+        .exercise-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+            font-size: 10px;
+        }
+
+        .exercise-description {
+            font-size: 9px;
+            color: #555;
+            line-height: 1.2;
+        }
+        /* Técnica de intensificación resaltada */
+        span.highlight {
+            background-color: rgba(240,198,116,0.15); /* translúcido dorado */
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+        /* Número de ejercicio */
+        .exercise-number {
+            display: inline-block;
+            color: #f0c674;
+            margin-right: 4px;
+            font-weight: bold;
+        }
+        /* Icono (puedes usar otro si lo prefieres) */
+        .icon {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 14px;
+            color: #f0c674;
+        }
+
+        .cat-icon {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 14px;
+            color: #f0c674;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 9px;
+            color: #777;
+            padding-bottom: 40px;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1c1c1c;
+            color: #f0c674;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+            .print-btn:hover {
+                background-color: #0d0d0d;
+            }
+
+        .page-break {
+            page-break-after: always;
+        }
+        /* Ajustes para impresión */
+        @media print {
+            @page {
+                margin: 0.5cm;
+                size: A4;
+            }
+
+            html, body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+                font-size: 10px;
+                line-height: 1.2;
+            }
+
+            .days-wrapper {
+                margin: 0 auto;
+                width: 90%;
+                max-width: 650px;
+            }
+
+            .day-container {
+                box-shadow: none;
+                width: 100%;
+                margin: 0 auto 10px;
+                page-break-inside: avoid;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .exercise-name {
+                font-size: 9px;
+            }
+
+            .exercise-description {
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>😼 RUTINA CATWOMAN 1.1</h1>
+    </div>
+
+
+    <div class="days-wrapper">
+
+        <!-- Día 1: UPPER (Enfoque: Pectoral & Espalda, recordando hombros) -->
+        <div class="day-container">
+            <h2>DÍA 1: UPPER</h2>
+            <div class="exercises-grid">
+                <!-- Ejercicio con técnica Zig Zag para aumentar pulsaciones -->
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">1.</span>Press de Banca Plano (Zig Zag)
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Zig Zag 7-1-6-2-5-3-4</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">2.</span>Remo con Mancuerna a 1 Brazo
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Rest-Pause 10s</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">3.</span>Press Militar con Barra
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (aplica <span class="highlight">1.5 REPS</span> en la última serie)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">4.</span>Jalón al Pecho
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Tempo 3-1-1</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">5.</span>Aperturas en Máquina
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Drop Set 15%</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">6.</span>Face Pull
+                    </div>
+                    <div class="exercise-description">
+                        2×12-15 reps (última serie: <span class="highlight">Dead Stop</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">7.</span>Curl de Bíceps con Barra
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Forzadas (1-2)</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">8.</span>Elevaciones Laterales (recordando hombros)
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">ISO 1s</span>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Día 2: LOWER (Enfoque: Cuádriceps, recordando isquiotibiales) -->
+        <div class="day-container">
+            <h2>DÍA 2: LOWER</h2>
+            <div class="exercises-grid">
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">1.</span>Sentadilla Frontal
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Tempo 3-1-1</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">2.</span>Prensa de Piernas
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Zig Zag 7-1-6-2-5-3-4</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">3.</span>Zancadas Caminando
+                    </div>
+                    <div class="exercise-description">
+                        3×10 reps c/ pierna (aplica <span class="highlight">Tempo 2-0-2</span> en la última serie)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">4.</span>Extensiones de Cuádriceps
+                    </div>
+                    <div class="exercise-description">
+                        3×12 reps (última serie: <span class="highlight">ISO 1s</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">5.</span>Curl Femoral Sentado
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Rest-Pause</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">6.</span>Elevación de Talones
+                    </div>
+                    <div class="exercise-description">
+                        3×12-15 reps (última serie: <span class="highlight">Pausa 1s arriba</span>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forzar salto de página si es necesario -->
+        <div class="page-break"></div>
+
+        <!-- Día 3: UPPER (Enfoque: Hombros y Brazos, recordando pectoral y espalda) -->
+        <div class="day-container">
+            <h2>DÍA 3: UPPER</h2>
+            <div class="exercises-grid">
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">1.</span>Press de Banca Inclinado
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Tempo 2-1-2</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">2.</span>Remo en Polea
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Rest-Pause</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">3.</span>Press Militar con Mancuernas
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Zig Zag 7-1-6-2-5-3-4</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">4.</span>Elevaciones Laterales
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">ISO 1s</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">5.</span>Jalón al Pecho
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Tempo 3-0-1</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">6.</span>Curl de Bíceps Alterno
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Forzadas (1-2)</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">7.</span>Curl Martillo
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Neg 2s</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">8.</span>Face Pull
+                    </div>
+                    <div class="exercise-description">
+                        2×12-15 reps (última serie: <span class="highlight">Dead Stop</span>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Día 4: LOWER (Enfoque: Isquios y Glúteos, recordando cuádriceps) -->
+        <div class="day-container">
+            <h2>DÍA 4: LOWER</h2>
+            <div class="exercises-grid">
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">1.</span>Peso Muerto Rumano
+                    </div>
+                    <div class="exercise-description">
+                        3×8-10 reps (última serie: <span class="highlight">Tempo 4-1-1</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">2.</span>Hip Thrust
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Rest-Pause</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">3.</span>Patada de Glúteo en Máquina
+                    </div>
+                    <div class="exercise-description">
+                        3×12-15 reps (última serie: <span class="highlight">ISO 2s en contracción</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">4.</span>Curl Femoral Tumbado
+                    </div>
+                    <div class="exercise-description">
+                        3×10-12 reps (última serie: <span class="highlight">Zig Zag 7-1-6-2-5-3-4</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">5.</span>Abducción en Polea
+                    </div>
+                    <div class="exercise-description">
+                        3×12 reps (última serie: <span class="highlight">Cluster Set</span>)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">6.</span>Sentadilla Hack (Ligera)
+                    </div>
+                    <div class="exercise-description">
+                        2×12 reps (última serie: <span class="highlight">Tempo 2-1-2</span> para recordar cuádriceps)
+                    </div>
+                </div>
+                <div class="exercise">
+                    <div class="exercise-name">
+                        <span class="exercise-number">7.</span>Pantorrillas en Prensa
+                    </div>
+                    <div class="exercise-description">
+                        3×12-15 reps (última serie: <span class="highlight">Pausa 1s arriba</span>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glosario de Técnicas de Intensificación -->
+        <div class="day-container">
+            <h2>GLOSARIO DE TÉCNICAS DE ENTRENAMIENTO</h2>
+            <div style="column-count: 2; column-gap: 15px; column-rule: 1px dotted #ccc;">
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>ISO / ISOMÉTRICO
+                    </div>
+                    <div class="exercise-description">
+                        Mantener contracción estática. "ISO 1s" = mantener contracción 1 segundo en la última serie.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>REST-PAUSE
+                    </div>
+                    <div class="exercise-description">
+                        Descanso breve (10-15s) tras fallo en la serie final y continuar con el mismo peso.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>TOP SET / BACK OFF
+                    </div>
+                    <div class="exercise-description">
+                        TOP: Serie a máximo peso; BACK OFF: Series adicionales reduciendo el peso (10-20%), aplicable en la última serie.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>MYO REPS
+                    </div>
+                    <div class="exercise-description">
+                        Serie principal de 12-15 reps; luego, tras 5-15s de pausa, mini-series de 3-5 reps (aplicar desde la segunda serie en adelante).
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>DEAD STOP
+                    </div>
+                    <div class="exercise-description">
+                        Detener totalmente el movimiento entre repeticiones, sin rebote, especialmente en la última repetición.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>PARCIALES
+                    </div>
+                    <div class="exercise-description">
+                        Repeticiones con rango reducido tras el fallo, aplicables en la última serie.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>NEGATIVAS
+                    </div>
+                    <div class="exercise-description">
+                        Fase excéntrica controlada (2-4s) para mayor estrés muscular, ideal en la última serie.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>CLUSTER SET
+                    </div>
+                    <div class="exercise-description">
+                        Mini-series de 1-3 reps con descansos breves (15-20s); aplicar en series medias (serie 2 o 3).
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>FORCED REPS
+                    </div>
+                    <div class="exercise-description">
+                        Ayuda de un compañero tras el fallo para obtener 1-2 reps adicionales en la última serie.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>1.5 REPS
+                    </div>
+                    <div class="exercise-description">
+                        Una repetición completa seguida de una media repetición adicional en cada repetición de la última serie.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>TEMPO X-X-X
+                    </div>
+                    <div class="exercise-description">
+                        Control del tiempo en cada fase: 1er número = bajada (excéntrica), 2do = pausa, 3ro = subida (concéntrica). Ejemplo: "3-1-1" = 3s bajada, 1s pausa, 1s subida.
+                    </div>
+                </div>
+                <div class="exercise" style="break-inside: avoid; margin-bottom: 5px;">
+                    <div class="exercise-name">
+                        <span class="cat-icon">😼</span>ZIG ZAG
+                    </div>
+                    <div class="exercise-description">
+                        Patrón alternado de repeticiones (7-1-6-2-5-3-4) con descanso de 30s entre cada mini-serie. Aumenta intensidad y concentración durante el ejercicio.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="imprimirDocumento()" class="print-btn">🖨️</button>
+
+    <script>
+        function imprimirDocumento() {
+            document.title = "RUTINA UPPER-LOWER 4D";
+            var originalBodyStyle = document.body.style.cssText;
+            document.body.style.width = "100%";
+            document.body.style.margin = "0 auto";
+            document.body.style.textAlign = "center";
+
+            var daysWrapper = document.querySelector('.days-wrapper');
+            var originalWrapperStyle = daysWrapper.style.cssText;
+            daysWrapper.style.maxWidth = "650px";
+            daysWrapper.style.margin = "0 auto";
+
+            window.print();
+
+            setTimeout(function () {
+                document.body.style.cssText = originalBodyStyle;
+                daysWrapper.style.cssText = originalWrapperStyle;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
