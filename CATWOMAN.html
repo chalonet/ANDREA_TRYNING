@@ -186,10 +186,7 @@
             overflow: hidden;
         }
 
-            .exercise-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            }
+            
 
         .exercise-header {
             display: flex;
@@ -225,9 +222,7 @@
             font-size: 1.2rem;
         }
 
-        .exercise-card:hover .expand-icon {
-            transform: rotate(180deg);
-        }
+        .
 
         .exercise-basic-info {
             display: flex;
@@ -257,7 +252,7 @@
         }
 
         .exercise-card.open .exercise-details {
-            max-height: 600px; /* o lo suficiente según tu contenido */
+            max-height: 600px; 
             opacity: 1;
         }
 
@@ -322,9 +317,7 @@
                 transition: transform 0.3s ease;
             }
 
-        .exercise-card:hover .exercise-image img {
-            transform: scale(1.05);
-        }
+       
 
         /* Glosario */
         .glossary-grid {
@@ -1961,6 +1954,12 @@
         const exerciseCards = document.querySelectorAll('.exercise-card');
         const techniqueCards = document.querySelectorAll('.technique-card');
 
+        exerciseCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('open');
+            });
+        });
+
         document.querySelector('.search-btn').addEventListener('click', () => {
             const query = searchInput.value.toLowerCase().trim();
 
@@ -1976,11 +1975,7 @@
                 card.style.display = text.includes(query) ? 'block' : 'none';
             });
 
-            exerciseCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    card.classList.toggle('open');
-                });
-            });
+            
 
             techniqueCards.forEach(card => {
                 const text = card.innerText.toLowerCase();
@@ -1994,6 +1989,7 @@
                 document.querySelector('.search-btn').click();
             }
         });
+
     </script>
 </body>
 </html>
