@@ -256,8 +256,8 @@
             transition: all 0.5s ease;
         }
 
-        .exercise-card:hover .exercise-details {
-            max-height: 600px; /* aumenta para mayor contenido */
+        .exercise-card.open .exercise-details {
+            max-height: 600px; /* o lo suficiente según tu contenido */
             opacity: 1;
         }
 
@@ -1974,6 +1974,12 @@
             exerciseCards.forEach(card => {
                 const text = card.innerText.toLowerCase();
                 card.style.display = text.includes(query) ? 'block' : 'none';
+            });
+
+            exerciseCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('open');
+                });
             });
 
             techniqueCards.forEach(card => {
